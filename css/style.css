@@ -1,0 +1,171 @@
+/* CONFIGURACIÓN BÁSICA */
+
+:root {
+    /* FUENTE PERSONALIZADA */
+    --fuentePrincipal: 'PT Sans', sans-serif;
+    --fuenteSecundaria: 'Open Sans', sans-serif;
+    --fuenteTerciaria: 'Roboto', sans-serif;
+    --colorSecundario: #FBF5DD;
+    --blanco: #fff;
+    --negro: #000;
+    --gris: #989898;
+    --azulLink: #4586FF;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+/* CONTENEDOR */
+
+.contenedor {
+    /* ANCHO Y ALTO NECESARIO */
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+/* PERFIL-USUARIO-FONDO */
+
+.perfil-usuario__fondo {
+    background-image: url(../img/fondo.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.perfil-usuario__fondoDegradado {
+    width: 100%;
+    height: 100%;
+    padding: 3rem;
+
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0%) 40%, rgba(255, 255, 255, 100%));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PERFIL-USUARIO */
+
+.perfil-usuario {
+    /* FUENTE POR DEFECTO */
+    font-family: var(--fuentePrincipal);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.perfil-usuario__foto {
+    width: 8.5rem;
+    height: 8.5rem;
+}
+
+.perfil-usuario__foto img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+
+    /* SOMBRA */
+    box-shadow: 0px 0px 25px rgba(0 0 0 / 30%);
+}
+
+.perfil-usuario__nombre {
+    color: var(--blanco);
+    text-shadow: 0px 0px 20px rgba(0 0 0);
+    /* SOMBRA PARA TEXTO: movimiento horizontal a la derecha, movimiento vertical hacia abajo, cantidad de difuminado, color */
+    font-family: var(--fuenteSecundaria);
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 2.3rem;
+    padding: .4rem 1rem;
+
+    /* FONDO BLUR TRANSPARENTADO */
+    border-radius: .8rem;
+    background-color: rgba(0 0 0 / 20%);
+    backdrop-filter: blur(4px);
+    /* FILTRO SOBRE FONDO: TIPO "BLUR" */
+}
+
+.perfil-usario__listaSM {
+    display: flex;
+    gap: 1rem;
+    margin-top: .2rem;
+}
+
+/* ELEMENTOS DE LISTA UL */
+
+.elemento-lista {
+    list-style: none;
+}
+
+.elemento-lista--a {
+    text-decoration: none;
+}
+
+/* OPCIONES DE USUARIO */
+
+.perfil-usuario__opciones ul {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-evenly;
+
+    /* SEPARACION */
+    margin-top: 4rem;
+}
+
+.perfil-usuario__opciones>ul li a {
+    color: var(--gris);
+}
+
+/* EJEMPLO: INFORMACIÓN (SELECCIONADO) */
+.perfil-usuario__opciones>ul li:first-child a {
+    color: var(--azulLink);
+}
+
+.perfil-usuario__informacion {
+    width: 90%;
+    margin: 3rem auto;
+}
+
+/* MEDIA QUERYS */
+
+@media (min-width: 480px) {
+    .contenedor {
+        width: min(90%, 120rem);
+        /* FLEX PARA CENTRAR */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .perfil-usuario {
+        border-radius: 2rem;
+        overflow: hidden;
+
+
+        /* BACKGROUND */
+        background-color: var(--blanco);
+        /* SOMBRA DE CAJA (OPCIONAL) */
+        box-shadow: 0px 0px 41px 2px rgba(0, 0, 0, 0.15);
+    }
+
+}
